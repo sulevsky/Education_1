@@ -10,6 +10,14 @@ public class DataItem {
         this.key = key;
     }
 
+    public long getKey() {
+        return key;
+    }
+
+    public void setKey(long key) {
+        this.key = key;
+    }
+
     @Override
     public String toString() {
         return "/" + key;
