@@ -1,4 +1,4 @@
-package com.courses.intro;
+package com.courses.intro_1;
 
 /**
  * Created by VSulevskiy on 05.05.2015.
