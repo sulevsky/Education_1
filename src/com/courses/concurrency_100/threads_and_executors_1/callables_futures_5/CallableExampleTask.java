@@ -1,4 +1,4 @@
-package com.courses.concurrency_100.threads_and_executors.callables_futures_5;
+package com.courses.concurrency_100.threads_and_executors_1.callables_futures_5;
 
 import java.util.concurrent.Callable;
 import java.util.concurrent.TimeUnit;

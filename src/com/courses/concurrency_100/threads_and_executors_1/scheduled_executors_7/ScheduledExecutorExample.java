@@ -1,6 +1,5 @@
-package com.courses.concurrency_100.threads_and_executors.scheduled_executors_7;
+package com.courses.concurrency_100.threads_and_executors_1.scheduled_executors_7;
 
-import java.sql.Time;
 import java.util.Date;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;

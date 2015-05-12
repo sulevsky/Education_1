@@ -1,4 +1,4 @@
-package com.courses.concurrency_100.threads_and_executors.invoke_all_any_6;
+package com.courses.concurrency_100.threads_and_executors_1.invoke_all_any_6;
 
 import java.util.ArrayList;
 import java.util.List;

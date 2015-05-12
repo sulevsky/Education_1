@@ -1,4 +1,4 @@
-package com.courses.concurrency_100.threads_and_executors.singlethreadexecutor_4;
+package com.courses.concurrency_100.threads_and_executors_1.singlethreadexecutor_4;
 
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;

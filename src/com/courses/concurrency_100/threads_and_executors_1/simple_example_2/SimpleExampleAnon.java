@@ -1,4 +1,4 @@
-package com.courses.concurrency_100.threads_and_executors.simple_example_2;
+package com.courses.concurrency_100.threads_and_executors_1.simple_example_2;
 
 /**
  * Created by VSulevskiy on 08.05.2015.
