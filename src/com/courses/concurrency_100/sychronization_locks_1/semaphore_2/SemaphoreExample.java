@@ -12,13 +12,13 @@ import java.util.concurrent.Semaphore;
  */
 public class SemaphoreExample {
     public static void main(String[] args) throws InterruptedException {
-        ExecutorService executor = Executors.newFixedThreadPool(10);
-        Semaphore semaphore = new Semaphore(5);
-        List<Callable<Boolean>> tasks = new ArrayList<Callable<Boolean>>();
-        for(int i = 0;i<15;i++){
-            tasks.add(new LongRunningTask(semaphore));
-        }
-        executor.invokeAll(tasks);
+//        ExecutorService executor = Executors.newFixedThreadPool(10);
+//        Semaphore semaphore = new Semaphore(5);
+//        List<Callable<Boolean>> tasks = new ArrayList<Callable<Boolean>>();
+//        for(int i = 0;i<15;i++){
+//            tasks.add(new LongRunningTask(semaphore));
+//        }
+//        executor.invokeAll(tasks);
     }
 
 
