@@ -23,7 +23,7 @@ public class Test {
                 System.out.println("Incorrect entry, exception " + scanner.nextLine() + ". You must enter numbers. Try again.");
             }
         }
-        while (num1!=null);
+        while (num1 != null);
 
         do {
             System.out.println("Please, input the second number.");
@@ -34,7 +34,7 @@ public class Test {
                 System.out.println("Incorrect entry, exception " + scanner.nextLine() + ". You must enter numbers. Try again.");
             }
         }
-        while (num2!=null);
+        while (num2 != null);
 
         BigDecimal sum = (num1.add(num2));
         sum = sum.setScale(8, RoundingMode.HALF_DOWN);
@@ -46,9 +46,9 @@ public class Test {
         mul = mul.setScale(8, RoundingMode.HALF_DOWN);
 
         String divOutput;
-        if(num2.intValue()!=0){
+        if (num2.intValue() != 0) {
             divOutput = (num1.divide(num2, 8, RoundingMode.HALF_DOWN)).toPlainString();
-        } else{
+        } else {
             divOutput = "You can't divide by zero";
         }
 
