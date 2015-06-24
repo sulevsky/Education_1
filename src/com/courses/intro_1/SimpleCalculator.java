@@ -14,7 +14,7 @@ public class SimpleCalculator {
         double secondNumber;
         System.out.println("Please input first number: ");
         Scanner scanner = new Scanner(System.in);
-//        scanner.useLocale(Locale.ENGLISH);
+        scanner.useLocale(Locale.ENGLISH);
         firstNumber = scanner.nextDouble();
         System.out.print("Your input ");
         System.out.print(firstNumber);
