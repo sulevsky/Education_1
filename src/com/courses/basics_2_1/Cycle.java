@@ -9,8 +9,6 @@ public class Cycle {
         for(;;){
             System.out.println(i);
             break;
-            i++;
         }
-        dsjhfsdg
     }
 }
