@@ -1,5 +1,7 @@
 package com.courses.basics_2_2;
 
+import java.util.ArrayList;
+
 /**
  * Created by VSulevskiy on 25.06.2015.
  */
@@ -17,6 +19,9 @@ public class AppXor {
         System.out.println(Integer.toBinaryString(key&in));
         System.out.println(Integer.toBinaryString(key|in));
         System.out.println(Integer.toBinaryString(key^in));
+        ArrayList list = new ArrayList();
+        ArrayList list2 = new ArrayList();
+        list.equals(list2);
 
     }
     public static char encode(char message, char key){
