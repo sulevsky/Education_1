@@ -15,19 +15,18 @@ public class SimpleFib {
         int loadTestNumber = 44; //45 - 10 sec, 46 - 15 sec
 
         //first test
-        long start = System.currentTimeMillis();
+        Instant start1 = Instant.now();
         System.out.println(loadTestNumber + " :\t " + getFibNumber(loadTestNumber));
-        long duration = System.currentTimeMillis() - start;
-        System.out.println("Calculation of " + loadTestNumber + " took " + (double) duration / 1000 + " seconds");
+        Instant end1 = Instant.now();
+        Duration duration1 = Duration.between(start1,end1);
+        System.out.println("Calculation of " + loadTestNumber + " took " + duration1.toString());
 
         //second test
         long[] cache = new long[loadTestNumber];
-        Instant start1 = Instant.now();
+        long start = System.currentTimeMillis();
         System.out.println(loadTestNumber + " :\t " + getFibNumberDynamic(loadTestNumber, cache));
-        Instant end1 = Instant.now();
-        Duration duration1 = Duration.between(start1,end1);
-        System.out.println("Calculation of " + loadTestNumber + " took " + duration1.getSeconds() + " seconds " +
-        duration1.toMillis());
+        long duration = System.currentTimeMillis() - start;
+        System.out.println("Calculation of " + loadTestNumber + " took " + (double) duration / 1000 + " seconds");
 
 
     }
