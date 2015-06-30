@@ -5,10 +5,24 @@ package com.courses.basics_2_1;
  */
 public class Cycle {
     public static void main(String[] args) {
-        int i =0;
-        for(;;){
-            System.out.println(i);
-            break;
-        }
+        double result;
+
+        result = add(22.4,10);
+        System.out.println(result);
+
+    }
+    public static double add(int first, double second){
+        return 10000000;
+    }
+
+    public static double add(double first, int second){
+        double sum = first + second;
+        return sum;
+    }
+    public static void printHello(){
+        printMessage("Hello");
+    }
+    public static void printMessage(String message){
+        System.out.println(message);
     }
 }
