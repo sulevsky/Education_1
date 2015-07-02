@@ -12,7 +12,7 @@ public class SimpleFib {
             System.out.println(i + " :\t " + getFibNumber(i));
         }
 
-        int loadTestNumber = 44; //45 - 10 sec, 46 - 15 sec
+        int loadTestNumber = 46; //45 - 10 sec, 46 - 15 sec
 
         //first test
         Instant start1 = Instant.now();
