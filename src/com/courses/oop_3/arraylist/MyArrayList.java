@@ -1,5 +1,7 @@
 package com.courses.oop_3.arraylist;
 
+import java.util.Arrays;
+
 public class MyArrayList {
     private int[] list;
     private int size;
@@ -78,53 +80,51 @@ public class MyArrayList {
         return true;
     }
 
-//    public void sort(){
-//        list = mergeSort(list);
-//    }
-//    private int[] mergeSort(int[] listOne){
-//        if(listOne.length<=1) return listOne;
-//
-//        else {
-//            int[] fpart = new int[listOne.length/2];
-//            int fpartIt =0;
-//            int[] spart = new int[listOne.length/2+listOne.length%2];
-//            int spartIt =0;
-//            for(int i = 0;i<listOne.length;i++){
-//                if(i<listOne.length/2){
-//                    fpart[fpartIt]=listOne[i];
-//                    fpartIt++;
-//                }else {
-//                    spart[spartIt]=listOne[i];
-//                    spartIt++;
-//
-//                }
-//            }
-//
-//            fpart = mergeSort(fpart);
-//            spart = mergeSort(spart);
-//            int[] result = merge(fpart,spart);
-//            return result;
-//
-//        }
-//    }
-//
-//    private int[] merge(int[] listOne,int[] listTwo) {
-//        int[] rez = new int[listOne.length+listTwo.length];
-//        int firstIt = 0;
-//        int secondIt = 0;
-//        int count=0;
-//        while(firstIt<listOne.length || secondIt<listTwo.length ){
-//            if(secondIt<listTwo.length || listOne[firstIt]<listTwo[secondIt] ){
-//                rez[count] = listOne[firstIt];
-//                firstIt++;
-//            }else if(firstIt<listOne.length  || list[firstIt]>=list[secondIt] ){
-//                rez[count] = listTwo[secondIt];
-//                secondIt++;
-//            }
-//            count++;
-//        }
-//        return rez;
-//    }
+    public void sort(){
+        list = mergeSort(list);
+    }
+    private int[] mergeSort(int[] listOne){
+        if(listOne.length<=1) return listOne;
+        else {
+            int[] fpart = new int[listOne.length/2];
+            int fpartIt =0;
+            int[] spart = new int[listOne.length/2+listOne.length%2];
+            int spartIt =0;
+            for(int i = 0;i<listOne.length;i++){
+                if(i<listOne.length/2){
+                    fpart[fpartIt]=listOne[i];
+                    fpartIt++;
+                }else {
+                    spart[spartIt]=listOne[i];
+                    spartIt++;
+
+                }
+            }
+            fpart = mergeSort(fpart);
+            spart = mergeSort(spart);
+            int[] result = merge(fpart,spart);
+            return result;
+
+        }
+    }
+
+    private int[] merge(int[] listOne,int[] listTwo) {
+        int[] rez = new int[listOne.length+listTwo.length];
+        int firstIt = 0;
+        int secondIt = 0;
+        int count=0;
+        while(firstIt<listOne.length || secondIt<listTwo.length ){
+            if(firstIt<listOne.length && (secondIt==listTwo.length || listOne[firstIt]<listTwo[secondIt]) ){
+                rez[count] = listOne[firstIt];
+                firstIt++;
+            }else if(secondIt<listTwo.length  && (firstIt==listOne.length || listOne[firstIt]>=listTwo[secondIt]) ){
+                rez[count] = listTwo[secondIt];
+                secondIt++;
+            }
+            count++;
+        }
+        return rez;
+    }
 
     private void print(){
         System.out.print("List: ");
@@ -156,9 +156,9 @@ public class MyArrayList {
 
         //addAll
         MyArrayList list2 = new MyArrayList(100);
+        list2.add(7);
         list2.add(5);
         list2.add(6);
-        list2.add(7);
         list.addAll(list2);
         list.print();
         MyArrayList list3 = new MyArrayList(1000);//empty
@@ -177,11 +177,12 @@ public class MyArrayList {
 //        int[] toMergeOne = {1,2,3,4};
 //        int[] toMergeTwo = {2,5,7};
 //        int[] r= list.merge(toMergeOne,toMergeTwo);
-//        int[] sorted = list.mergeSort(new int[]{8,4,8,2,7});
+//        int[] sorted = list.mergeSort(new int[]{8,4,5,77,8,2,7,0,-1});
 //        System.out.println(Arrays.toString(sorted));
 
-
-
+        //sort
+        list.sort();
+        list.print();
 
     }
 }
