@@ -15,6 +15,6 @@ public class StudentApp {
         group.addStudent(student2) ;
         group.addStudent("Sidorov");
         group.print();
-        Integer
+
     }
 }

@@ -1,7 +1,10 @@
 package com.courses.oop_3.arraylist;
 
-import java.util.Arrays;
-
+/*
+Container for int only
+for implementation of container for Objects
+see com.courses.datastructures.arraylist.MyArrayList.java
+ */
 public class MyArrayList {
     private int[] list;
     private int size;
