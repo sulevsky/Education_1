@@ -5,32 +5,40 @@ public class Student {
     private String surname;
     private int[] marks;
 
-    public Student(int i, String s, int[] m){
+    public Student(int i, String s, int[] m) {
         id = i;
         surname = s;
         marks = m;
     }
-    public Student(int id, String surname) {
-        this.id = id;
-        this.surname = surname;
-        this.marks = new int[34];
+   public Student(int i, String s, int numOfMarks) {
+        id = i;
+        surname = s;
+        marks = new int[numOfMarks];
     }
-    public Student(Student st){
+
+    public Student(int id, String surname) {
+        this(id,surname,34);
+    }
+
+    public Student(Student st) {
         this.id = st.id;
         surname = new String(st.surname);
         marks = new int[st.marks.length];
-        for(int i=0;i<st.marks.length;i++){
+        for (int i = 0; i < st.marks.length; i++) {
             marks[i] = st.marks[i];
         }
     }
-    public int getId(){
+
+    public int getId() {
         return id;
     }
-    public void setId(int id){
-        this.id=id;
+
+    public void setId(int id) {
+        this.id = id;
     }
-   public void setId(long id){
-        this.id=(int)id;
+
+    public void setId(long id) {
+        this.id = (int) id;
     }
 
     public String getSurname() {
@@ -44,15 +52,16 @@ public class Student {
     public int[] getMarks() {
         return marks;
     }
+
     public void setMarks(int[] marks) {
         this.marks = marks;
     }
 
-    public void setMark(int lessonNum, int mark){
-        this.marks[lessonNum]=mark;
+    public void setMark(int lessonNum, int mark) {
+        this.marks[lessonNum] = mark;
     }
 
-    public int getMark(int lessonNum){
+    public int getMark(int lessonNum) {
         return this.marks[lessonNum];
     }
 }
