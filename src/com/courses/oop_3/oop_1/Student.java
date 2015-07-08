@@ -1,4 +1,4 @@
-package com.courses.oop_1;
+package com.courses.oop_3.oop_1;
 
 public class Student {
     private int id;

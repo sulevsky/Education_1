@@ -1,4 +1,4 @@
-package com.courses.oop_2_inheritance;
+package com.courses.oop_3.inheritance;
 
 
 public class Student extends Person{

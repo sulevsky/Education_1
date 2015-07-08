@@ -1,4 +1,4 @@
-package com.courses.oop_1;
+package com.courses.oop_3.oop_1;
 public class Group {
     private Student[] students = new Student[10];
     private int numOfStudents = 0;

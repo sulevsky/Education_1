@@ -1,4 +1,4 @@
-package com.courses.oop_2_inheritance;
+package com.courses.oop_3.inheritance;
 
 /**
  * Created by Vladimir Sulevskiy on 07.07.2015.

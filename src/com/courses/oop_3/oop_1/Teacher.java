@@ -1,4 +1,4 @@
-package com.courses.oop_1;
+package com.courses.oop_3.oop_1;
 
 /**
  * Created by Vladimir Sulevskiy on 07.07.2015.
