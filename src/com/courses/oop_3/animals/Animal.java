@@ -26,6 +26,8 @@ public class Animal {
         return "Hello ";
     }
 
+//    public abstract void move();
+
     public int getAge() {
         return age;
     }
