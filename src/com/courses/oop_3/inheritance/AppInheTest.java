@@ -8,5 +8,6 @@ public class AppInheTest {
         Student student = new Student(100,
                 "Ivanov",new int[]{1,2,2});
         student.toString();
+        Person person = new Person();
     }
 }

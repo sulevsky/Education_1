@@ -9,7 +9,7 @@ public class Person  {
         this.surname = surname;
         System.out.println("constr 1");
     }
-    public Person(){
+    public Person`(){
         this(100);
     }
     public Person(int id) {
