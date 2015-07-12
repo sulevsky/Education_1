@@ -12,4 +12,13 @@ public class Giraffe extends Wild {
 
     public Giraffe() {
     }
+
+
+    public String toString(){
+        String result ="";
+        result += "Id: " + getId();
+        result += " Age: " + getAge();
+        result += " IsPredator: " + isPredator();
+        return result;
+    }
 }

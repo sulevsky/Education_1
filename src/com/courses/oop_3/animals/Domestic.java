@@ -3,7 +3,7 @@ package com.courses.oop_3.animals;
 /**
  * Created by VSulevskiy on 09.07.2015.
  */
-public class Domestic extends Animal {
+public abstract class Domestic extends Animal {
     private String name;
     private boolean isVaccinated;
 

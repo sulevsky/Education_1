@@ -3,7 +3,7 @@ package com.courses.oop_3.animals;
 /**
  * Created by VSulevskiy on 09.07.2015.
  */
-public class Wild extends Animal {
+public abstract class Wild extends Animal {
     private boolean isPredator;
 
     public Wild(int id, int age, double weight, String color, boolean isPredator) {
@@ -13,7 +13,7 @@ public class Wild extends Animal {
 
     public Wild() {
     }
-
+    @Override
     public String phrase(){
         String result = super.phrase();
         result+= "I am a wild animal ";
@@ -22,6 +22,8 @@ public class Wild extends Animal {
         }
         return result;
     }
+
+
 
     public boolean isPredator() {
         return isPredator;

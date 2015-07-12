@@ -3,8 +3,8 @@ package com.courses.oop_3.animals;
 /**
  * Created by VSulevskiy on 09.07.2015.
  */
-public class Animal {
-    private int id;
+public abstract class Animal {
+    public int id;
     private int age;
     private double weight;
     private String color;
