@@ -1,17 +1,14 @@
 package com.courses.datastructures.linkedlist;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collection;
-import java.util.LinkedList;
+import java.util.*;
 
 /**
  * Created by Vladimir Sulevskiy on 07.07.2015.
  */
-public class MyLinkedList {
+public class MyLinkedLIst implements Iterable<Object> {
     private Element firstElement;
 
-    public MyLinkedList() {
+    public MyLinkedLIst() {
         firstElement = null;
     }
 
@@ -175,7 +172,7 @@ public class MyLinkedList {
 //TODO investigate
     public boolean MY_INCORRECT_retainAll(Collection c) {
         boolean result = false;
-        MyLinkedList temp = new MyLinkedList();
+        MyLinkedLIst temp = new MyLinkedLIst();
         Element currentElement = firstElement;
 
         while (currentElement != null) {
@@ -194,7 +191,7 @@ public class MyLinkedList {
 
     public boolean retainAll(Collection c) {
         boolean result = false;
-        MyLinkedList temp = new MyLinkedList();
+        MyLinkedLIst temp = new MyLinkedLIst();
         Element currentElement = firstElement;
 
         while (currentElement != null) {
@@ -203,9 +200,7 @@ public class MyLinkedList {
             } else {
                 result = true;
             }
-            System.out.println("Bf");
             currentElement = currentElement.next;
-            System.out.println("Af");
         }
         this.firstElement = temp.firstElement;
         return result;
@@ -223,7 +218,7 @@ public class MyLinkedList {
     }
 
     public static void main(String[] args) {
-        MyLinkedList list = new MyLinkedList();
+        MyLinkedLIst list = new MyLinkedLIst();
 //        System.out.println(list);
 //        System.out.println(list.size());
         list.add(2.5);
@@ -252,6 +247,15 @@ public class MyLinkedList {
         System.out.println(list);
         list.retainAll(Arrays.asList(2.5, 3.5));
         System.out.println(list);
+        for(Object o : list){
+            System.out.println("BEf");
+            System.out.println(o);
+        }
 
+    }
+
+    @Override
+    public Iterator<Object> iterator() {
+        return new MyLinkedListIterator(this.firstElement);
     }
 }
