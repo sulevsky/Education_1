@@ -1,6 +1,6 @@
 package com.courses.oop_3.animals;
 
-import java.util.ArrayList;
+import java.util.*;
 
 /**
  * Created by VSulevskiy on 09.07.2015.
@@ -23,9 +23,28 @@ public class App {
         Giraffe giraffe = new Giraffe(7,33,36,"Spot",false);
         zoo[6]=giraffe;
 
+        List list = Arrays.asList(zoo);
 
-        System.out.println(cat.id);
+        Iterator iterator = list.iterator();
+        while(iterator.hasNext()){
+            Object elem = iterator.next();
+            ((Animal)elem).say();
+        }
 
 
+    }
+
+    private static void zooVoice(Animal[] zoo) {
+
+    }
+    private static void roarVoice(Object[] zoo) {
+        for (Object an : zoo){
+            if(an instanceof Roarable) {
+                ((Roarable) an).roar();
+            }else
+            {
+                System.out.println("NOT");
+            }
+        }
     }
 }

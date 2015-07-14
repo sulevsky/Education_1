@@ -13,7 +13,7 @@ public class Search {
 
     public static void main(String[] args) {
         int[] array = new int[ARRAY_SIZE];
-        fillRandomNumbers(array);
+        Search.fillRandomNumbers(array);
         Arrays.sort(array);
 
         System.out.println("---------\nFirst test - sequence search");
@@ -41,6 +41,14 @@ public class Search {
         return binarySearch(array, numberToFind, 0, array.length - 1);
     }
 
+    public static void fillRandomNumbers(int[] array) {
+        Random random = new Random();
+        for (int i = 0; i < array.length; i++) {
+            int randomNumber = random.nextInt(array.length);
+            array[i] = randomNumber;
+        }
+    }
+
     public static int binarySearch(int[] array, int numberToFind, int low, int high) {
         int index = (low + high) / 2;
         if (low > high || low == high) {
@@ -54,14 +62,6 @@ public class Search {
             return binarySearch(array, numberToFind, index + 1, high);
         }
         return -1;
-    }
-
-    public static void fillRandomNumbers(int[] array) {
-        Random random = new Random();
-        for (int i = 0; i < array.length; i++) {
-            int randomNumber = random.nextInt(array.length);
-            array[i] = randomNumber;
-        }
     }
 
     public static int sequenceSearch(int[] array, int query) {
