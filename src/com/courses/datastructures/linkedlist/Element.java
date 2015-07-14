@@ -11,4 +11,9 @@ public class Element {
         this.next = next;
         this.data = data;
     }
+
+    @Override
+    public boolean equals(Object obj) {
+        return data.equals(((Element)obj).data);
+    }
 }

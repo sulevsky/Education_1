@@ -8,10 +8,10 @@ import java.util.LinkedList;
 /**
  * Created by Vladimir Sulevskiy on 07.07.2015.
  */
-public class MyLinkedLIst {
+public class MyLinkedList {
     private Element firstElement;
 
-    public MyLinkedLIst() {
+    public MyLinkedList() {
         firstElement = null;
     }
 
@@ -172,10 +172,10 @@ public class MyLinkedLIst {
         }
         return isRemoved;
     }
-
-    public boolean retainAll(Collection c) {
+//TODO investigate
+    public boolean MY_INCORRECT_retainAll(Collection c) {
         boolean result = false;
-        MyLinkedLIst temp = new MyLinkedLIst();
+        MyLinkedList temp = new MyLinkedList();
         Element currentElement = firstElement;
 
         while (currentElement != null) {
@@ -184,7 +184,28 @@ public class MyLinkedLIst {
             } else {
                 result = true;
             }
+            System.out.println("Bf");
             currentElement = currentElement.next;
+            System.out.println("Af");
+        }
+        this.firstElement = temp.firstElement;
+        return result;
+    }
+
+    public boolean retainAll(Collection c) {
+        boolean result = false;
+        MyLinkedList temp = new MyLinkedList();
+        Element currentElement = firstElement;
+
+        while (currentElement != null) {
+            if (c.contains(currentElement.data)) {
+                temp.append(currentElement.data);
+            } else {
+                result = true;
+            }
+            System.out.println("Bf");
+            currentElement = currentElement.next;
+            System.out.println("Af");
         }
         this.firstElement = temp.firstElement;
         return result;
@@ -202,7 +223,7 @@ public class MyLinkedLIst {
     }
 
     public static void main(String[] args) {
-        MyLinkedLIst list = new MyLinkedLIst();
+        MyLinkedList list = new MyLinkedList();
 //        System.out.println(list);
 //        System.out.println(list.size());
         list.add(2.5);
@@ -229,7 +250,7 @@ public class MyLinkedLIst {
 //        list.addToIndex(5.5, 0);
 //        list.add(5.5);
         System.out.println(list);
-        list.retainAll(Arrays.asList(2.5, 3.5, 4.5));
+        list.retainAll(Arrays.asList(2.5, 3.5));
         System.out.println(list);
 
     }
