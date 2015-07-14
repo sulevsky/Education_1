@@ -8,10 +8,10 @@ import java.util.LinkedList;
 /**
  * Created by Vladimir Sulevskiy on 07.07.2015.
  */
-public class MyLinkedList {
+public class MyLinkedLIst {
     private Element firstElement;
 
-    public MyLinkedList() {
+    public MyLinkedLIst() {
         firstElement = null;
     }
 
@@ -175,7 +175,7 @@ public class MyLinkedList {
 
     public boolean retainAll(Collection c) {
         boolean result = false;
-        MyLinkedList temp = new MyLinkedList();
+        MyLinkedLIst temp = new MyLinkedLIst();
         Element currentElement = firstElement;
 
         while (currentElement != null) {
@@ -202,7 +202,7 @@ public class MyLinkedList {
     }
 
     public static void main(String[] args) {
-        MyLinkedList list = new MyLinkedList();
+        MyLinkedLIst list = new MyLinkedLIst();
 //        System.out.println(list);
 //        System.out.println(list.size());
         list.add(2.5);
