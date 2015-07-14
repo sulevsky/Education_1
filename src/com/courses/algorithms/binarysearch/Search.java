@@ -32,7 +32,7 @@ public class Search {
         System.out.println("Index is " + index);
         System.out.println("Duration is " + optimizedDuration + " ms");
 
-        System.out.println("Performance increased " + duration / (double) optimizedDuration + " times");
+        System.out.println("Performance increased " + duration / (double) optimizedDuration + " times ");
 
 
     }
@@ -59,7 +59,7 @@ public class Search {
     public static void fillRandomNumbers(int[] array) {
         Random random = new Random();
         for (int i = 0; i < array.length; i++) {
-            int randomNumber = random.nextInt(ARRAY_SIZE);
+            int randomNumber = random.nextInt(array.length);
             array[i] = randomNumber;
         }
     }
