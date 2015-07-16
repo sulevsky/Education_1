@@ -1,5 +1,7 @@
 package com.courses.concurrency_100.thread_creating_1;
 
+import java.io.*;
+
 /**
  * Created by VSulevskiy on 08.07.2015.
  */
@@ -16,7 +18,7 @@ public class App {
         printTenNumbersWithDelay();
     }
 
-    public static void printTenNumbersWithDelay(){
+    public static void printTenNumbersWithDelay() {
         for (int i=0;i<10;i++) {
             System.out.println("Main thread "+i);
             try {
