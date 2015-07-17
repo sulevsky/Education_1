@@ -1,4 +1,4 @@
-package com.courses.serializationtest;
+package com.courses.io.serializationtest;
 
 import java.io.Serializable;
 

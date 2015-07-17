@@ -1,4 +1,4 @@
-package com.courses.concurrency_100.secondcounter_2;
+package com.courses.concurrency_100.secondcounter_2.fixed;
 
 import javax.swing.*;
 import java.awt.*;
@@ -7,11 +7,11 @@ import java.text.DecimalFormat;
 /**
  * Created by VSulevskiy on 16.07.2015.
  */
-public class SecondCounterLookup extends JComponent {
-    private boolean keepRunning;
+public class SecondCounterLookup extends JComponent implements Runnable {
+    private volatile boolean keepRunning;
     private Font textFont;
-    private String timeMessage;
-    private int arcLen;
+    private volatile String timeMessage;
+    private volatile int arcLen;
 
     public SecondCounterLookup() {
         textFont = new Font("SansSerif", Font.BOLD, 14);
@@ -19,6 +19,9 @@ public class SecondCounterLookup extends JComponent {
         arcLen = 0;
     }
 
+    public void run(){
+        runClock();
+    }
     public void runClock() {
         System.out.println("Thread is running clock " + Thread.currentThread().getName());
 

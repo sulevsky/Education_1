@@ -1,6 +1,9 @@
 package com.courses.datastructures.arraylist;
 
-public class MyArrayList {
+import java.util.ArrayList;
+import java.util.Collection;
+
+public class MyArrayList  {
     private Object[] list;
     private int size;
     public MyArrayList() {
@@ -17,7 +20,11 @@ public class MyArrayList {
         }
     }
 
-    public void add(Object object) {
+    public int size(){
+        return size;
+    }
+
+    public boolean add(Object object) {
         Object[] newList = new Object[size + 1];
         for (int i = 0; i < size; i++) {
             newList[i] = list[i];
@@ -25,18 +32,27 @@ public class MyArrayList {
         newList[size] = object;
         list = newList;
         size++;
+        return true;
     }
     /**
     removes by index
      */
-    public void remove(int index) {
-        //TODO warn if index > size
+    public boolean remove(int index) {
+        validateIndex(index);
         for (int i = index; i < size - 1; i++) {
             list[i] = list[i + 1];
         }
         list[size-1]=null;
         size--;
+        return true;
     }
+
+    private void validateIndex(int index){
+        if(index<0 || index>=size){
+            throw new IndexOutOfBoundsException();
+        }
+    }
+
     public int find(Object object){
         for(int i=0;i<size;i++){
             if(list[i].equals(object)){
@@ -59,10 +75,15 @@ public class MyArrayList {
         return find(object)!=-1;
     }
 
-    public void addAll(MyArrayList input) {
+    public boolean addAll(MyArrayList input) {
         for (int i = 0; i < input.getSize(); i++) {
-            this.add(input.get(i));
+            boolean additionResult = this.add(input.get(i));
         }
+        return input.empty();
+    }
+
+    public boolean empty() {
+        return size==0;
     }
 
     public Object get(int i) {
@@ -93,7 +114,6 @@ public class MyArrayList {
         return true;
     }
 
-
     private void print() {
         System.out.print("List: ");
         for (int i = 0; i < size-1; i++) {
@@ -105,12 +125,14 @@ public class MyArrayList {
 
     public static void main(String[] args) {
         //simple testing
-        MyArrayList list = new MyArrayList();
+        ArrayList list = new ArrayList();
 //
 //        //add
-//        list.add(3);
-//        list.add(4);
-//        list.print();
+        list.add(3);
+        list.add(4);
+        for(Object o : list){
+            o.hashCode();
+        }
 //
 //        //getSize
 //        System.out.println(list.getSize());//2
