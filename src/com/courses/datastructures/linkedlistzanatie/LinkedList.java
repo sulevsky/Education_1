@@ -1,6 +1,9 @@
 package com.courses.datastructures.linkedlistzanatie;
 
 
+import com.sun.istack.internal.NotNull;
+import com.sun.istack.internal.Nullable;
+
 import java.util.Collection;
 import java.util.Iterator;
 
@@ -123,16 +126,24 @@ public class LinkedList implements Collection{
         }
         return result;
     }
+
+    private String printBackWards(Element start) {
+//        if(start== null) System.out.printf("null");
+        if (start.getNext() == null) return start.getData().toString();
+        return printBackWards(start.getNext()) + ", " + start.getData();
+    }
+
+
     public static void main(String[] args) {
         LinkedList list1 = new LinkedList();
         list1.add(2.5);
         double d  = 3.5;
         list1.add(d);
-        list1.add(null);
+        list1.add(5.5);
+        System.out.println(list1.printBackWards(list1.first));
+        System.out.println(list1.printBackWards(null));
 
-        for (Object o : list1) {
-            System.out.println(o);
-        }
+
 
     }
 
