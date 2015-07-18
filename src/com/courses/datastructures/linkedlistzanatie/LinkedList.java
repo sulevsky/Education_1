@@ -1,9 +1,5 @@
 package com.courses.datastructures.linkedlistzanatie;
 
-
-import com.sun.istack.internal.NotNull;
-import com.sun.istack.internal.Nullable;
-
 import java.util.Collection;
 import java.util.Iterator;
 
@@ -133,7 +129,6 @@ public class LinkedList implements Collection{
         return printBackWards(start.getNext()) + ", " + start.getData();
     }
 
-
     public static void main(String[] args) {
         LinkedList list1 = new LinkedList();
         list1.add(2.5);
@@ -141,10 +136,5 @@ public class LinkedList implements Collection{
         list1.add(d);
         list1.add(5.5);
         System.out.println(list1.printBackWards(list1.first));
-        System.out.println(list1.printBackWards(null));
-
-
-
     }
-
 }
