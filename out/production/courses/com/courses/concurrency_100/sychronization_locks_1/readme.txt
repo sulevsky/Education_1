@@ -1,1 +1,0 @@
-http://winterbe.com/posts/2015/04/30/java8-concurrency-tutorial-synchronized-locks-examples/
