@@ -28,4 +28,7 @@ public class Duck {
         flyBehavior.fly();
     }
 
+    public void setFlyBehavior(FlyBehavior flyBehavior) {
+        this.flyBehavior = flyBehavior;
+    }
 }

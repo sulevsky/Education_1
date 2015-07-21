@@ -4,14 +4,18 @@ package com.courses.patterns_4.singleton;
  * Created by VSulevskiy on 17.07.2015.
  */
 public class WebService {
+//eager
+    private static WebService service;
 
-    private static WebService service =
-            new WebService();
+
     private WebService(){
 
     }
 
     public static WebService getInstance(){
+        if(service==null){
+            service=new WebService();
+        }
         return service;
     }
 

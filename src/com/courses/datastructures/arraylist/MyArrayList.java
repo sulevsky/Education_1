@@ -1,7 +1,11 @@
 package com.courses.datastructures.arraylist;
 
+import com.courses.oop_3.animals.*;
+
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Collections;
+import java.util.Comparator;
 
 public class MyArrayList  {
     private Object[] list;
@@ -125,14 +129,12 @@ public class MyArrayList  {
 
     public static void main(String[] args) {
         //simple testing
-        ArrayList list = new ArrayList();
+//        ArrayList list = new ArrayList();
 //
 //        //add
-        list.add(3);
-        list.add(4);
-        for(Object o : list){
-            o.hashCode();
-        }
+//        list.add(3);
+//        list.add(4);
+
 //
 //        //getSize
 //        System.out.println(list.getSize());//2
@@ -146,23 +148,37 @@ public class MyArrayList  {
 //        System.out.println(list.contains(5));
 //
 //        //addAll
-        MyArrayList list2 = new MyArrayList(100);
+//        MyArrayList list2 = new MyArrayList(100);
 //        list2.add(7);
 //        list2.add(5);
 //        list2.add(6);
 //        list.addAll(list2);
 //        list.print();
-        MyArrayList list3 = new MyArrayList(1000);//empty
+//        MyArrayList list3 = new MyArrayList(1000);//empty
 //        list.addAll(list3);
 //        list.print();
 //
 //        //equalsToOtherList
 //        System.out.println(list.equalToOtherList(list3));//false
-//        MyArrayList list4 = new MyArrayList(100);
-//        list4.add(4);
-//        list4.add(5);
-//        list4.add(6);
-//        list4.add(7);
+        ArrayList zoo= new ArrayList(100);
+        Cat cat = new Cat(1,3,3.4,"Grey","Murka",true);
+        zoo.add(cat);
+        Lion lion = new Lion(2,10,90,"Yellow",true);
+        zoo.add(cat);
+        Dog dog = new Dog(3,7,16,"Black","Tuzik",true);
+        Fish fish = new Fish(4,3,0.2,"Gold","Karas'",false);
+        GuideDog cleverDog = new GuideDog(5,10,10,"White","Sharik",true,true);
+        GuideDog notCleverDog = new GuideDog(6,1,3,"Grey","Muhtar",true,false);
+        Giraffe giraffe = new Giraffe(7,33,36,"Spot",false);
+        zoo.add(dog);
+        zoo.add(fish);
+        zoo.add(cleverDog);
+        zoo.add(notCleverDog);
+        zoo.add(giraffe);
+//        Comparator comparator = new MyComparator();
+        Collections.sort(zoo);
+
+        System.out.println(zoo);
 //        System.out.println(list.equalToOtherList(list4));//true
 
 //        int[] toMergeOne = {1,2,3,4};

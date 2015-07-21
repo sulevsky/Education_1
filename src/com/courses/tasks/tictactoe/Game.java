@@ -56,7 +56,7 @@ public class Game {
             boolean turnResultPositive = gameLogic.makeTurn(buttonNum);
             if (turnResultPositive) {
                 buttons[buttonNum].setForeground(Color.RED);
-                buttons[buttonNum].setFont(new Font("SansSerif", Font.BOLD, 10));
+                buttons[buttonNum].setFont(new Font("SansSerif", Font.BOLD, 50));
                 buttons[buttonNum].setText("X");
             }else{
                 return;
@@ -70,7 +70,7 @@ public class Game {
             int aiPos = gameLogic.aIMakeTurn();
             boolean aiWin = gameLogic.checkAiWin();
             buttons[aiPos].setForeground(Color.WHITE);
-            buttons[aiPos].setFont(new Font("SansSerif", Font.BOLD, 10));
+            buttons[aiPos].setFont(new Font("SansSerif", Font.BOLD, 50));
             buttons[aiPos].setText("O");
 
             if(aiWin){

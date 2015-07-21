@@ -3,7 +3,7 @@ package com.courses.oop_3.animals;
 /**
  * Created by VSulevskiy on 09.07.2015.
  */
-public abstract class Animal {
+public abstract class Animal implements Comparable {
     public int id;
     private int age;
     private double weight;
@@ -60,4 +60,19 @@ public abstract class Animal {
         this.id = id;
     }
 
+    @Override
+    public String toString() {
+        return "Animal{" +
+                "age=" + age +
+                ", id=" + id +
+                '}';
+    }
+
+    @Override
+    public int compareTo(Object o) {
+        Animal thatObject = (Animal)o;
+        if(this.age<thatObject.age) return -1;
+        else if(this.age>thatObject.age) return 1;
+        else return 0;
+    }
 }
