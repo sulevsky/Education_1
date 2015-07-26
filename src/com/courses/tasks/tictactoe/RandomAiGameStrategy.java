@@ -5,6 +5,8 @@ package com.courses.tasks.tictactoe;
  */
 public class RandomAiGameStrategy implements AiGameStrategy {
     @Override
+
     public int aiMakeTurn(int[] field) {
+        return 0;
     }
 }
