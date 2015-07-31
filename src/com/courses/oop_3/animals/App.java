@@ -1,50 +1,77 @@
 package com.courses.oop_3.animals;
 
-import java.util.*;
+import com.courses.oop_3.animals.observable.Observer;
+import com.courses.oop_3.animals.observers.HungryObserver;
+import com.courses.oop_3.animals.observers.SicknessObserver;
+
+import java.util.ArrayList;
+import java.util.List;
+
 
 /**
  * Created by VSulevskiy on 09.07.2015.
  */
 public class App {
-    public static void main(String[] args) {
-        Animal[] zoo = new Animal[7];
+    public static Giraffe giraffe;
+    public static List init() {
+        List zoo = new ArrayList();
+
         Cat cat = new Cat(1,3,3.4,"Grey","Murka",true);
-        zoo[0]=cat;
+        zoo.add(cat);
         Lion lion = new Lion(2,10,90,"Yellow",true);
-        zoo[1]=lion;
+        zoo.add(lion);
         Dog dog = new Dog(3,7,16,"Black","Tuzik",true);
-        zoo[2]=dog;
+        zoo.add(dog);
         Fish fish = new Fish(4,3,0.2,"Gold","Karas'",false);
-        zoo[3]=fish;
+        zoo.add(fish);
         GuideDog cleverDog = new GuideDog(5,10,10,"White","Sharik",true,true);
-        zoo[4]=cleverDog;
+        zoo.add(cleverDog);
         GuideDog notCleverDog = new GuideDog(6,1,3,"Grey","Muhtar",true,false);
-        zoo[5]=notCleverDog;
-        Giraffe giraffe = new Giraffe(7,33,36,"Spot",false);
-        zoo[6]=giraffe;
+        zoo.add(notCleverDog);
+        giraffe = new Giraffe(7,33,36,"Spot",false);
+        zoo.add(giraffe);
+        return zoo;
 
-        List list = Arrays.asList(zoo);
+    }
 
-        Iterator iterator = list.iterator();
-        while(iterator.hasNext()){
-            Object elem = iterator.next();
-            ((Animal)elem).say();
+    public static void main(String[] args) {
+        Observer doctor = new SicknessObserver();
+        Observer feeder = new HungryObserver();
+
+        Hamster hamster = new Hamster();
+        Fish fish = new Fish();
+
+        hamster.addObserver(doctor);
+        hamster.addObserver(feeder);
+
+        fish.addObserver(feeder);
+
+
+        hamster.notifyObservers();
+
+        fish.notifyObservers();
+
+
+
+    }
+
+
+
+
+
+
+    private static void printStatus(List zoo) {
+        if(isAnybodyHungry(zoo)){
+            System.out.println("Go and  feed him");
         }
-
-
-    }
-
-    private static void zooVoice(Animal[] zoo) {
-
-    }
-    private static void roarVoice(Object[] zoo) {
-        for (Object an : zoo){
-            if(an instanceof Roarable) {
-                ((Roarable) an).roar();
-            }else
-            {
-                System.out.println("NOT");
-            }
+        else{
+            System.out.println("Free time");
         }
     }
+
+    public static boolean isAnybodyHungry(List zoo){
+
+        return false;
+    }
+
 }
