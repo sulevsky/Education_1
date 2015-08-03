@@ -15,7 +15,6 @@ public class TextChanger implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        System.out.println(e.);
         button.setText("Clicked!!!!");
         button.setEnabled(false);
     }
