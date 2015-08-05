@@ -3,8 +3,10 @@ package com.courses.oop_3.animals;
 import com.courses.oop_3.animals.observable.Observer;
 import com.courses.oop_3.animals.observers.HungryObserver;
 import com.courses.oop_3.animals.observers.SicknessObserver;
+import com.courses.oop_3.oop_1.Student;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 
@@ -13,8 +15,8 @@ import java.util.List;
  */
 public class App {
     public static Giraffe giraffe;
-    public static List init() {
-        List zoo = new ArrayList();
+    public static Zoo init() {
+        Zoo zoo = new Zoo();
 
         Cat cat = new Cat(1,3,3.4,"Grey","Murka",true);
         zoo.add(cat);
@@ -35,21 +37,11 @@ public class App {
     }
 
     public static void main(String[] args) {
-        Observer doctor = new SicknessObserver();
-        Observer feeder = new HungryObserver();
-
-        Hamster hamster = new Hamster();
-        Fish fish = new Fish();
-
-        hamster.addObserver(doctor);
-        hamster.addObserver(feeder);
-
-        fish.addObserver(feeder);
-
-
-        hamster.notifyObservers();
-
-        fish.notifyObservers();
+//        Zoo zoo = init();
+//        System.out.println(zoo.remove(2));
+//        addGirafe(zoo);
+//        System.out.println(zoo.get(6));
+//        System.out.println(sum(5,5));
 
 
 
@@ -60,18 +52,6 @@ public class App {
 
 
 
-    private static void printStatus(List zoo) {
-        if(isAnybodyHungry(zoo)){
-            System.out.println("Go and  feed him");
-        }
-        else{
-            System.out.println("Free time");
-        }
-    }
 
-    public static boolean isAnybodyHungry(List zoo){
-
-        return false;
-    }
 
 }
