@@ -1,7 +1,6 @@
-package com.courses.swing_5.layout_6.manual_7;
+package com.courses.swing_5.manual_7;
 
 import javax.swing.*;
-import java.awt.*;
 
 /**
  * Created by VSulevskiy on 03.08.2015.
