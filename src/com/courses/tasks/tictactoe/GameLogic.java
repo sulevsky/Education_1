@@ -7,22 +7,22 @@ public class GameLogic {
     //default
     public AiGameStrategy aiGameStrategy;
 
-//    public boolean makeTurn(int position){
-//
-//    }
-//    public int aIMakeTurn(){
-//
-//    }
-//
-//    public void setAiGameStrategy(AiGameStrategy gameStrategy){
-//    }
-//
-//    public boolean checkPlayerWin() {
-//
-//    }
-//
-//    public boolean checkAiWin() {
-//
-//    }
+    public boolean makeTurn(int position){
+        return true;
+    }
+    public int aIMakeTurn(){
+        return 0;
+    }
+
+    public void setAiGameStrategy(AiGameStrategy gameStrategy){
+    }
+
+    public boolean checkPlayerWin() {
+        return true;
+    }
+
+    public boolean checkAiWin() {
+        return true;
+    }
 
 }

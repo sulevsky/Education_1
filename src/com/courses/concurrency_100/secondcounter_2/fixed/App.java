@@ -21,33 +21,33 @@ public class App extends JPanel {
         startButton = new JButton("Start");
         stopButton = new JButton("Stop");
         stopButton.setEnabled(false);
-
-        startButton.addActionListener(e -> {
-            startButton.setEnabled(false);
-            Thread counterThread = new Thread(counterLookup,"Second Counter");
-            counterThread.start();
-
-            stopButton.setEnabled(true);
-            startButton.requestFocus();
-        });
-        stopButton.addActionListener(e -> {
-            stopButton.setEnabled(false);
-            counterLookup.stopClock();
-            startButton.setEnabled(true);
-            startButton.requestFocus();
-        });
-        JPanel innerButtonPanel = new JPanel();
-        innerButtonPanel.setLayout(new GridLayout(0, 1, 0, 3));
-        innerButtonPanel.add(startButton);
-        innerButtonPanel.add(stopButton);
-
-        JPanel buttonPanel = new JPanel();
-        buttonPanel.setLayout(new BorderLayout());
-        buttonPanel.add(innerButtonPanel, BorderLayout.NORTH);
-        this.setLayout(new BorderLayout(10, 10));
-        this.setBorder(new EmptyBorder(20, 20, 20, 20));
-        this.add(buttonPanel, BorderLayout.WEST);
-        this.add(counterLookup,BorderLayout.CENTER);
+//
+//        startButton.addActionListener(e -> {
+//            startButton.setEnabled(false);
+//            Thread counterThread = new Thread(counterLookup,"Second Counter");
+//            counterThread.start();
+//
+//            stopButton.setEnabled(true);
+//            startButton.requestFocus();
+//        });
+//        stopButton.addActionListener(e -> {
+//            stopButton.setEnabled(false);
+//            counterLookup.stopClock();
+//            startButton.setEnabled(true);
+//            startButton.requestFocus();
+//        });
+//        JPanel innerButtonPanel = new JPanel();
+//        innerButtonPanel.setLayout(new GridLayout(0, 1, 0, 3));
+//        innerButtonPanel.add(startButton);
+//        innerButtonPanel.add(stopButton);
+//
+//        JPanel buttonPanel = new JPanel();
+//        buttonPanel.setLayout(new BorderLayout());
+//        buttonPanel.add(innerButtonPanel, BorderLayout.NORTH);
+//        this.setLayout(new BorderLayout(10, 10));
+//        this.setBorder(new EmptyBorder(20, 20, 20, 20));
+//        this.add(buttonPanel, BorderLayout.WEST);
+//        this.add(counterLookup,BorderLayout.CENTER);
     }
 
     public static void main(String[] args) {
