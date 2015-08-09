@@ -34,7 +34,10 @@ public class MyArrayList {
     }
 
     public void remove(int index) {
-        //TODO warn if index > size
+        if(index<0 || index>size){
+            throw new IndexOutOfBoundsException("error");
+        }
+
         for(int i = index;i<size-1;i++){
             list[i]=list[i+1];
         }

@@ -1,2 +1,2 @@
-Hello!
+ØHello!
 This is test file for IO!
