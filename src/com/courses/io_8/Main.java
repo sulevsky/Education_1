@@ -57,8 +57,8 @@ public class Main {
         File inputFile = new File("resourses/io_test.txt");
         File outputFile = new File("resourses/io_test_out.txt");
 
-        FileInputStream is = null;
-        FileOutputStream os = null;
+        InputStream is = null;
+        OutputStream os = null;
         try {
             is = new FileInputStream(inputFile);
             os = new FileOutputStream(outputFile);
