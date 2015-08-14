@@ -1,7 +1,5 @@
 package com.courses.io_8;
 
-import com.sun.xml.internal.messaging.saaj.util.ByteInputStream;
-
 import java.io.*;
 
 /**
@@ -10,17 +8,17 @@ import java.io.*;
 public class Main {
     public static void main(String[] args) throws Exception {
         //first example
-//        Inputer inputer = new Inputer("resourses/io_test.txt");
-//        inputer.read();
-//        System.out.print("\n");
-//        System.out.println("Number of symbols: " + inputer.countNumOfSymbols());
+
+//        byteInputStreamTest();
+        //second example
+//        copyTest();
+        //third example
+        Inputer inputer = new Inputer("resourses/io_test.txt");
+        inputer.read();
+        System.out.print("\n");
+        System.out.println("Number of symbols: " + inputer.countNumOfSymbols());
 //        Outputer outputer = new Outputer("resourses/output_test.txt");
 //        outputer.write("Hi");
-
-        //second example
-//        byteInputStreamTest();
-        //third example
-        copyTest();
     }
 
     public static void byteInputStreamTest() {

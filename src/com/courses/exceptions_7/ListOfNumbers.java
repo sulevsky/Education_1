@@ -33,43 +33,31 @@ public class ListOfNumbers {
 //        }
 //        outWriter.close();
 //    }
-    public void writeList() throws PrintException {
+    public void writeList() {
+        FileWriter outWriter = null;
         try {
-            PrintWriter outWriter = new PrintWriter(new FileWriter("out.txt"));
+            outWriter = new FileWriter("out.txt");
             for (int i = 0; i < numOfDigits; i++) {
-                outWriter.println("Value at i " + i + " = " + list.get(i));
+                outWriter.write("Value at i " + i + " = " + list.get(i));
             }
-            outWriter.close();
         } catch (IOException e) {
-            System.out.println(e.getMessage());//bad
-            e.printStackTrace();
+            throw new PrintException("can't print", e);
 
         } catch (IndexOutOfBoundsException e) {
-//            System.out.println(e.toString());//very bad
             e.printStackTrace(System.out);
-//            System.exit(1);
         } finally {
-            System.out.println("Finally");
+            IoUtils.closeWriter(outWriter);
         }
-        throw new PrintException("can't print");
 
     }
 
-    public static void main(String[] args) throws MalformedURLException {
+
+    public static void main(String[] args) {
         ListOfNumbers listOfNumbers = new ListOfNumbers();
         listOfNumbers.init(20);
 
-        try {
-            listOfNumbers.writeList();
-        } catch (Exception e) {
-//            e.printStackTrace();
-            System.out.println("Second block");
-        }
-//        catch (PrintException e) {
-//            System.out.println("First block");
-////            e.printStackTrace();
-//        }
-
+        listOfNumbers.writeList();
+//
 //        System.out.println(Arrays.toString(arr));
     }
 

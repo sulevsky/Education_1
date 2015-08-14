@@ -29,7 +29,7 @@ public class Inputer {
             // преобразуем полученный байт в символ
             content = (char) data;
             // выводим посимвольно
-            System.out.print(content);
+//            System.out.print(content);
             data = inputstream.read();
         }
         // закрываем поток
