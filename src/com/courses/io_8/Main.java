@@ -13,8 +13,8 @@ public class Main {
         //second example
 //        copyTest();
         //third example
-        Inputer inputer = new Inputer("resourses/io_test.txt");
-        inputer.read();
+        Inputer inputer = new Inputer("resourses/wap.txt");
+//        inputer.read();
         System.out.print("\n");
         System.out.println("Number of symbols: " + inputer.countNumOfSymbols());
 //        Outputer outputer = new Outputer("resourses/output_test.txt");

@@ -11,7 +11,7 @@ public class GameCharacter implements Serializable {
     private int power;
     private String name;
     private CharacterType type;
-    private String[] weapons;
+    transient private String[] weapons;
 
     public GameCharacter(int power, String name, CharacterType type, String[] weapons) {
         this.power = power;

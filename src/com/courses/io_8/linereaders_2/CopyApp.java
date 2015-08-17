@@ -17,7 +17,7 @@ public class CopyApp {
                 System.out.println(s);
                 printWriter.write(s);
                 printWriter.write("\n");
-//                printWriter.println(s);
+                printWriter.println(s);
             }
 
         } catch (FileNotFoundException e) {

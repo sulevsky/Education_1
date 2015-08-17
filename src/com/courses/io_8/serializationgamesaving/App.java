@@ -22,6 +22,8 @@ public class App {
         objectOutputStream.writeObject(firstPlayer);
         objectOutputStream.writeObject(secondPlayer);
 
+        objectOutputStream.close();
+
         //restore
         GameCharacter restoredFirstPlayer = null;
         GameCharacter restoredSecondPlayer = null;
@@ -31,7 +33,7 @@ public class App {
         System.out.println(restoredFirstPlayer);
         restoredSecondPlayer = (GameCharacter) objectInputStream.readObject();
         System.out.println(restoredSecondPlayer);
-
+        objectInputStream.close();
 
     }
 }

@@ -1,6 +1,7 @@
 package com.courses.io_8;
 
 import java.io.*;
+
 /**
  * Created by Vladimir on 02.05.2015.
  */
@@ -25,11 +26,11 @@ public class Inputer {
         int data = inputstream.read();
         char content;
         // по байтово читаем весь файл
-        while(data != -1) {
+        while (data != -1) {
             // преобразуем полученный байт в символ
             content = (char) data;
             // выводим посимвольно
-//            System.out.print(content);
+            System.out.print(content);
             data = inputstream.read();
         }
         // закрываем поток
@@ -38,15 +39,17 @@ public class Inputer {
 
     public int countNumOfSymbols() throws IOException {
         int numOfSymbols = 0;
-        InputStream inputstream = new FileInputStream(filePath);
+
+        BufferedInputStream bis = new BufferedInputStream(new FileInputStream(filePath));
+        InputStream inputstream = bis;
 
         int data;
 
-         do {
+        do {
             data = inputstream.read();
             numOfSymbols++;
 
-        }while(data != -1);
+        } while (data != -1);
         // закрываем поток
         inputstream.close();
         return numOfSymbols;

@@ -3,9 +3,6 @@ package com.courses.patterns_4.decorator_4;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Created by VSulevskiy on 10.08.2015.
- */
 public class App {
     public static void main(String[] args) {
         List<Shape> shapes = createShapes();
@@ -30,6 +27,8 @@ public class App {
 
         Shape rectangleWithRedBorders = new RedShapeDecorator(new Rectangle());
         shapes.add(rectangleWithRedBorders);
+        Shape circleWithRedBorders = new RedShapeDecorator(new Circle());
+        shapes.add(circleWithRedBorders);
 
         return shapes;
     }
