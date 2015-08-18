@@ -1,14 +1,13 @@
 package com.courses.concurrency_100.synchronized_10;
 
-public class BothInMethod {
+public class TwoObjects {
     private String id;
 
-    public BothInMethod(String id) {
+    public TwoObjects(String id) {
         this.id = id;
     }
 
-    public void doStuff(int val) {
-        //next iteration add synchronized block
+    public synchronized void doStuff(int val) {
         print("entering doStuff()");
         int num = val*2 + id.length();
         print("in doStuff() - local variable num ="+num);
@@ -29,11 +28,12 @@ public class BothInMethod {
         String threadName = Thread.currentThread().getName();
         System.out.println(threadName + ": " + message);
     }
-    //first iteration
+    //third iteration
     public static void main(String[] args) throws InterruptedException {
-        BothInMethod bothInMethod = new BothInMethod("obj1");
-        Runnable runnableA = () -> bothInMethod.doStuff(3);
-        Runnable runnableB = () -> bothInMethod.doStuff(7);
+        TwoObjects obj1 = new TwoObjects("obj1");
+        TwoObjects obj2 = new TwoObjects("obj2");
+        Runnable runnableA = () -> obj1.doStuff(3);
+        Runnable runnableB = () -> obj2.doStuff(7);
         Thread threadA = new Thread(runnableA,"threadA");
         Thread threadB = new Thread(runnableB,"threadB");
 
@@ -41,8 +41,4 @@ public class BothInMethod {
         Thread.sleep(200);
         threadB.start();
     }
-
-    //second iteration
-    //same, but add synchronized block
-
 }
