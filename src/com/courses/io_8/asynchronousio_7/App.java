@@ -16,9 +16,11 @@ public class App {
         File file = Paths.get("resourses\\wap.txt").toFile();
         System.out.println(file.exists());
         try {
-            AsynchronousFileChannel asynchronousFileChannel = AsynchronousFileChannel.open(file.toPath());
+            AsynchronousFileChannel asynchronousFileChannel =
+                    AsynchronousFileChannel.open(file.toPath());
             ByteBuffer buffer = ByteBuffer.allocate(1_000_000);
             Future<Integer> future = asynchronousFileChannel.read(buffer,0);
+
             while(!future.isDone()){
                 System.out.println("Working");
             }

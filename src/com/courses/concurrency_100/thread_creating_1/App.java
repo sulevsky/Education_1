@@ -9,11 +9,11 @@ public class App {
     public static void main(String[] args) {
         //single threaded
         Thread thread = new MyThread();
-        thread.run();
-        printTenNumbersWithDelay();
+//        thread.run();
+//        printTenNumbersWithDelay();
 
         //multi threaded
-        System.out.println("\n Another try\n");
+//        System.out.println("\n Another try\n");
         thread.start();
         printTenNumbersWithDelay();
     }

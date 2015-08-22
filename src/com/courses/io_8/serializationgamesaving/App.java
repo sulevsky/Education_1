@@ -7,22 +7,22 @@ import java.io.*;
  */
 public class App {
     public static void main(String[] args) throws IOException, ClassNotFoundException {
-        CharacterType elf = new CharacterType("elf","blue");
-        CharacterType ork = new CharacterType("ork","green");
+//        CharacterType elf = new CharacterType("elf","blue");
+//        CharacterType ork = new CharacterType("ork","green");
 
         //save
-        GameCharacter firstPlayer =
-                new GameCharacter(100,"Legolas", elf,new String[]{"sword", "bow"});
-        GameCharacter secondPlayer =
-                new GameCharacter(85,"Ork", ork, new String[]{"hands", "axe"});
+//        GameCharacter firstPlayer =
+//                new GameCharacter(100,"Legolas", elf,new String[]{"sword", "bow"});
+//        GameCharacter secondPlayer =
+//                new GameCharacter(85,"Ork", ork, new String[]{"hands", "axe"});
 
-        FileOutputStream out = new FileOutputStream("save.dat");
-        ObjectOutputStream objectOutputStream =  new ObjectOutputStream(out);
-
-        objectOutputStream.writeObject(firstPlayer);
-        objectOutputStream.writeObject(secondPlayer);
-
-        objectOutputStream.close();
+//        FileOutputStream out = new FileOutputStream("save.dat");
+//        ObjectOutputStream objectOutputStream =  new ObjectOutputStream(out);
+//
+//        objectOutputStream.writeObject(firstPlayer);
+//        objectOutputStream.writeObject(secondPlayer);
+//
+//        objectOutputStream.close();
 
         //restore
         GameCharacter restoredFirstPlayer = null;

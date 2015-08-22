@@ -35,7 +35,7 @@ public class PathExample {
 
     }
 
-    private static void noTryWithResourcesExample() {
+    private static void noTryWithResourcesExample()  {
         File file = new File("resourses\\wap.txt");
         String line;
         BufferedReader reader = null;
