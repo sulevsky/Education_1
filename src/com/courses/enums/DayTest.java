@@ -37,7 +37,7 @@ public class DayTest {
     public static void main(String[] args) {
         DayTest dayTest = new DayTest();
 //        System.out.println(Day.FRIDAY.isItBadDay());
-        System.out.println(Planet.EARTH == Planet.EARTH);
+
 
 //        Day monday = Day.MONDAY;
 //        dayTest.tellItLikeItIs(monday);
