@@ -10,4 +10,8 @@ public class App {
         NutritionFacts burger = new Builder(200,1).calories(540).sodium(12).carbonhydrate(46).fat(45).build();
 
     }
+
+    public static void main(String[] args) {
+        new App().usageNutritionFacts();
+    }
 }
