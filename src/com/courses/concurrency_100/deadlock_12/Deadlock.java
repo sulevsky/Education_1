@@ -95,6 +95,8 @@ public class Deadlock {
 
         print("did that break the deadlock?");
 
+//        System.exit(-1);
+
     }
 
 }
