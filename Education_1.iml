@@ -16,6 +16,5 @@
     <orderEntry type="library" name="Maven: com.google.guava:guava-primitives:r03" level="project" />
     <orderEntry type="library" name="Maven: com.google.guava:guava-base:r03" level="project" />
     <orderEntry type="library" name="junit-4.10" level="application" />
-    <orderEntry type="library" name="postgresql-9.4-1202.jdbc4" level="application" />
   </component>
 </module>
