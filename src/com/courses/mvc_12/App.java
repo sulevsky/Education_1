@@ -2,6 +2,7 @@ package com.courses.mvc_12;
 
 import com.courses.mvc_12.control.BeatController;
 import com.courses.mvc_12.control.ControllerInterface;
+import com.courses.mvc_12.model.BeatModelDraft;
 import com.courses.mvc_12.model.BeatModelOk;
 import com.courses.mvc_12.model.BeatModelInterface;
 

@@ -1,4 +1,4 @@
-package com.courses.mvc_12.simple_example;
+package com.courses.patterns_4.decorator_4.simple_example;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -11,14 +11,16 @@ public class DuckSimulator {
         DuckSimulator simulator = new DuckSimulator();
         List<Quackable> flock = simulator.create();
         simulator.simulate(flock);
+        System.out.println(QuackDecorator.getNum());
     }
 
     private List<Quackable> create() {
         List<Quackable> flock = new ArrayList<>();
-        Quackable mDuck = new MallardDuck();
-        Quackable rDuck = new RedheadDuck();
+        Quackable mDuck = new QuackDecorator(new MallardDuck());
+        Quackable rDuck = new QuackDecorator(new RedheadDuck());
         flock.add(mDuck);
         flock.add(rDuck);
+
         return flock;
     }
 
