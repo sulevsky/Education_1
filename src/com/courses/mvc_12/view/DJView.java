@@ -83,7 +83,7 @@ public class DJView implements ActionListener, BeatObserver, BpmObserver {
         stopMenuItem.addActionListener(e -> controller.stop());
 
         JMenuItem exit = new JMenuItem("Quit");
-        exit.addActionListener(e -> System.exit(0));
+        exit.addActionListener(event -> System.exit(0));
         menu.add(exit);
         menuBar.add(menu);
 

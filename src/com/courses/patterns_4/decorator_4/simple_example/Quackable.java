@@ -1,4 +1,4 @@
-package com.courses.mvc_12.simple_example;
+package com.courses.patterns_4.decorator_4.simple_example;
 
 /**
  * Created by VSulevskiy on 18.09.2015.
