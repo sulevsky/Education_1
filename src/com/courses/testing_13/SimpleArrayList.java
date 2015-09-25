@@ -1,6 +1,5 @@
 package com.courses.testing_13;
 
-import org.junit.Test;
 
 /**
  * Created by VSulevskiy on 22.09.2015.

@@ -6,8 +6,8 @@ public class Main {
 
     public static void main(String[] args) {
         Object lock = new Object();
-        TestObject firstObject = new TestObject("first",lock);
-        TestObject secondObject = new TestObject("second",lock);
+        final TestObject firstObject = new TestObject("first",lock);
+        final TestObject secondObject = new TestObject("second",lock);
 
 
         Runnable runnableA = new Runnable() {
