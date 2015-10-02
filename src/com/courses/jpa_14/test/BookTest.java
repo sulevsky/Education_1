@@ -1,13 +1,17 @@
 package com.courses.jpa_14.test;
 
 import com.courses.jpa_14.Book;
-import org.junit.*;
+import org.junit.AfterClass;
+import org.junit.Before;
+import org.junit.BeforeClass;
+import org.junit.Test;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
 import javax.persistence.Persistence;
-import java.util.List;
+
+import static org.junit.Assert.*;
 
 /**
  * Created by VSulevskiy on 25.09.2015.
@@ -48,8 +52,8 @@ public class BookTest {
         entityManager.persist(book);
         entityTransaction.commit();
 
-        Assert.assertNotNull("Id should be null", book.getId());
-        Book bookGotFromDb = entityManager.find(Book.class,Long.parseLong("1"));
-        Assert.assertNotNull("Book is not stored", bookGotFromDb);
+//        assertNotNull("Id should be null", book.getId());
+        Book bookGotFromDb = entityManager.find(Book.class,1L);
+        assertNotNull("Book is not stored", bookGotFromDb);
     }
 }

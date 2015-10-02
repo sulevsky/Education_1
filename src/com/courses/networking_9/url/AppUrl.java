@@ -13,6 +13,7 @@ public class AppUrl {
     public static void main(String[] args) {
         URL url = null;
         try {
+//            url = new URL("http://fs.to/video/films/view/i4qypClTOPeBiLMBlTVYF3i?play&file=5741468");
             url = new URL("https://docs.google.com/document/d/1ZxJ_ddPBvAIb9U5yrh13UvDNu-p3QOsQwwK06NZMhYk/edit");
 
             //encoding
@@ -24,9 +25,9 @@ public class AppUrl {
             e.printStackTrace();
         }
 
-        parseUrl(url);
-        readFromUrl(url);
-        connectToUrl(url);
+//        parseUrl(url);
+//        readFromUrl(url);
+//        connectToUrl(url);
     }
 
     private static void parseUrl(URL url) {

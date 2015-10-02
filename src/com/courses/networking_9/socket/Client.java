@@ -25,16 +25,11 @@ public class Client {
             BufferedReader stdIn = new BufferedReader(new InputStreamReader(System.in));
 
             String userInput;
-            int i =0;
             while ((userInput = stdIn.readLine()) != null) {
-
                 out.println(userInput);
                 out.flush();
                 System.out.println(userInput);
-                System.out.println(i++);
-                System.out.println("1" );//make async
                 System.out.println(in.readLine() );//make async
-                System.out.println("2");
             }
 
         } catch (IOException e) {

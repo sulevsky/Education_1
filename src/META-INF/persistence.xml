@@ -11,12 +11,12 @@
         <properties>
             <property name="javax.persistence.jdbc.driver" value="org.postgresql.Driver" />
             <property name="javax.persistence.jdbc.url" value="jdbc:postgresql://localhost:5432/jpa_example" />
-            <property name="javax.persistence.jdbc.user" value="anaconda" />
-            <property name="javax.persistence.jdbc.password" value="anaconda" />
+            <property name="javax.persistence.jdbc.user" value="postgres" />
+            <property name="javax.persistence.jdbc.password" value="postgres" />
             <property name="hibernate.dialect" value="org.hibernate.dialect.PostgreSQL9Dialect" />
             <property name="hibernate.hbm2ddl.auto" value="create" />
-            <!--<property name="hibernate.show_sql" value="true" />-->
-            <!--<property name="hibernate.format_sql" value="true" />-->
+            <property name="hibernate.show_sql" value="true" />
+            <property name="hibernate.format_sql" value="true" />
             <property name="hibernate.transaction.flush_before_completion" value="true" />
         </properties>
     </persistence-unit>
@@ -26,8 +26,8 @@
         <properties>
             <property name="javax.persistence.jdbc.driver" value="org.postgresql.Driver" />
             <property name="javax.persistence.jdbc.url" value="jdbc:postgresql://localhost:5432/jpa_example" />
-            <property name="javax.persistence.jdbc.user" value="anaconda" />
-            <property name="javax.persistence.jdbc.password" value="anaconda" />
+            <property name="javax.persistence.jdbc.user" value="postgres" />
+            <property name="javax.persistence.jdbc.password" value="postgres" />
             <property name="hibernate.dialect" value="org.hibernate.dialect.PostgreSQL9Dialect" />
             <property name="hibernate.hbm2ddl.auto" value="create-drop" />
             <property name="hibernate.show_sql" value="true" />
