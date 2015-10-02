@@ -29,10 +29,11 @@ public class Client {
             while ((userInput = stdIn.readLine()) != null) {
 
                 out.println(userInput);
+                out.flush();
                 System.out.println(userInput);
                 System.out.println(i++);
                 System.out.println("1" );//make async
-//                System.out.println(in.readLine() );//make async
+                System.out.println(in.readLine() );//make async
                 System.out.println("2");
             }
 
