@@ -2,28 +2,43 @@ package com.courses.jpa_14;
 
 import com.sun.org.apache.xpath.internal.operations.Bool;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by VSulevskiy on 25.09.2015.
  */
 @Entity
+//@Table(name = "books")
 public class Book {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     private String title;
+    @Basic(optional = false)
     private Float price;
     private String description;
     private String isbn;
     private Integer numOfPages;
     private Boolean illustrations;
 
+//    @ElementCollection(fetch = FetchType.EAGER)
+//    @CollectionTable(name = "Tag")
+//    @Column(name = "Value")
+//    private List<String> tags = new ArrayList<>();
+
     public Book() {
+
     }
+
+//    public List<String> getTags() {
+//        return tags;
+//    }
+//
+//    public void setTags(List<String> tags) {
+//        this.tags = tags;
+//    }
 
     public Long getId() {
         return id;

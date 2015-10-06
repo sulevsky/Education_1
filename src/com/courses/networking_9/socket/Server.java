@@ -38,10 +38,6 @@ public class Server {
             try {
                 serverSocket.close();
             } catch (IOException e) {
-            }
-            try {
-                serverSocket.close();
-            } catch (IOException e) {
                 e.printStackTrace();
             }
             out.close();
