@@ -46,7 +46,7 @@ public class App {
         System.out.println("_______________________________");
 //        System.out.println(foundBook.getTags());
 
-        entityManager.detach(foundBook);
+//        entityManager.detach(foundBook);
         foundBook.setNumOfPages(-1);
         entityManager.refresh(foundBook);
         entityTransaction.commit();
