@@ -19,56 +19,65 @@ public class App {
         stringCollection.add("ccc");
         stringCollection.add("bbb2");
         stringCollection.add("ddd1");
-
-        stringCollection
-                .stream()
-                .filter((s) -> s.startsWith("a"))
-                .forEach(System.out::println);
+//
+//        long startsWithB =
+//                stringCollection
+//                        .stream()
+//                        .filter((s) -> s.startsWith("b"))
+//                        .count();
+//
+//        System.out.println(startsWithB);    // 3
+//
+//
+//        stringCollection
+//                .stream()
+//                .filter((s) -> s.startsWith("a"))
+//                .forEach((s)->{
+//                    System.out.println(s.length()+s);
+//                });
+////
+////
         stringCollection
                 .stream()
                 .sorted()
                 .filter((s) -> s.startsWith("a"))
                 .forEach(System.out::println);
+        List<String> result = new ArrayList<>();
         stringCollection
                 .stream()
-                .map(String::toUpperCase)
+                .map(String::new)
                 .sorted((a, b) -> b.compareTo(a))
-                .forEach(System.out::println);
-        long startsWithB =
-                stringCollection
-                        .stream()
-                        .filter((s) -> s.startsWith("b"))
-                        .count();
-
-        System.out.println(startsWithB);    // 3
+                .forEach(result::add);
+        System.out.println(result);
+        parallelStreamTest();
     }
 
-    public static void parallelStreamTest(){
+    public static void parallelStreamTest() {
         int max = 1000000;
         List<String> values = new ArrayList<>(max);
         for (int i = 0; i < max; i++) {
             UUID uuid = UUID.randomUUID();
             values.add(uuid.toString());
         }
-        long t0 = System.nanoTime();
-
-        long count = values.stream().sorted().count();
-        System.out.println(count);
-
-        long t1 = System.nanoTime();
-
-        long millis = TimeUnit.NANOSECONDS.toMillis(t1 - t0);
-        System.out.println(String.format("sequential sort took: %d ms", millis));
-//
 //        long t0 = System.nanoTime();
 //
-//        long count = values.parallelStream().sorted().count();
+//        long count = values.stream().sorted().count();
 //        System.out.println(count);
 //
 //        long t1 = System.nanoTime();
 //
 //        long millis = TimeUnit.NANOSECONDS.toMillis(t1 - t0);
-//        System.out.println(String.format("parallel sort took: %d ms", millis));
+//        System.out.println(String.format("sequential sort took: %d ms", millis));
+//
+        long t0 = System.nanoTime();
+
+        long count = values.parallelStream().sorted().count();
+        System.out.println(count);
+
+        long t1 = System.nanoTime();
+
+        long millis = TimeUnit.NANOSECONDS.toMillis(t1 - t0);
+        System.out.println(String.format("parallel sort took: %d ms", millis));
 
 
     }

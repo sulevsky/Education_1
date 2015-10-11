@@ -4,31 +4,37 @@
          http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
     <modelVersion>4.0.0</modelVersion>
-    <groupId>com.apress.javaee6</groupId>
+    <groupId>com.courses.jpa_14</groupId>
     <artifactId>Education_1</artifactId>
     <version>2.0</version>
     <name>Education_1</name>
 
     <dependencies>
         <dependency>
-            <groupId>javax.persistence</groupId>
-            <artifactId>persistence-api</artifactId>
-            <version>1.0.2</version>
+            <groupId>org.hibernate.javax.persistence</groupId>
+            <artifactId>hibernate-jpa-2.0-api</artifactId>
+            <version>1.0.1.Final</version>
         </dependency>
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>javax.servlet-api</artifactId>
+            <version>3.1.0</version>
+        </dependency>
+
         <!--<dependency>-->
-            <!--<groupId>org.hibernate.java-persistence</groupId>-->
-            <!--<artifactId>jpa-api</artifactId>-->
-            <!--<version>2.0-cr-1</version>-->
+        <!--<groupId>org.hibernate.java-persistence</groupId>-->
+        <!--<artifactId>jpa-api</artifactId>-->
+        <!--<version>2.0-cr-1</version>-->
         <!--</dependency>-->
         <dependency>
             <groupId>org.hibernate</groupId>
             <artifactId>hibernate-entitymanager</artifactId>
             <version>4.3.6.Final</version>
             <!--<exclusions>-->
-                <!--<exclusion>-->
-                    <!--<groupId>org.hibernate.javax.persistence</groupId>-->
-                    <!--<artifactId>hibernate-jpa-2.1-api</artifactId>-->
-                <!--</exclusion>-->
+            <!--<exclusion>-->
+            <!--<groupId>org.hibernate.javax.persistence</groupId>-->
+            <!--<artifactId>hibernate-jpa-2.1-api</artifactId>-->
+            <!--</exclusion>-->
             <!--</exclusions>-->
         </dependency>
         <dependency>
@@ -42,12 +48,6 @@
             <version>4.8.1</version>
             <!--<scope>test</scope>-->
         </dependency>
-        <dependency>
-            <groupId>javax.servlet</groupId>
-            <artifactId>javax.servlet-api</artifactId>
-            <version>3.1.0</version>
-        </dependency>
-
     </dependencies>
     <build>
         <plugins>
