@@ -14,7 +14,7 @@ public class ParamsServlet extends HttpServlet {
     private static final String DEFAULT_USER = "Guest";
 
     @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse response)
+    public void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         String user = request.getParameter("user");
         if (user == null)

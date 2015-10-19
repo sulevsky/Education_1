@@ -6,6 +6,7 @@ package com.courses.java8_15.deafultmethods;
 public class App {
     public static void main(String[] args) {
         Formula formula = new HundredMultiplicator();
+
         System.out.println(calculator(formula, 100));
     }
     public static double calculator(Formula formula, int value){

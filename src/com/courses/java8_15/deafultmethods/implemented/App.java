@@ -5,9 +5,7 @@ package com.courses.java8_15.deafultmethods.implemented;
  */
 public class App {
     public static void main(String[] args) {
-        Formula formula = new HundredMultiplicator();
-        System.out.println(calculator(formula, 100));
-        System.out.println(formula.sqrt(16));
+//        System.out.println(calculator((a)->10, 100));
 
     }
     public static double calculator(Formula formula, int value){
