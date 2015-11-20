@@ -1,32 +1,41 @@
 package com.courses.oop_3.oop_1;
+
 public class Group {
-    private Student[] students = new Student[10];
-    private int numOfStudents = 0;
-    public void addStudent(Student student) {
-        if (numOfStudents < students.length - 1) {
-            students[numOfStudents] = student;
-            numOfStudents++;
+
+    private Student[] students = new Student[0];
+
+    public void add(Student student) {
+        Student[] newArray = new Student[students.length + 1];
+        for (int i = 0; i < students.length; i++) {
+            newArray[i] = students[i];
+        }
+        newArray[students.length] = student;
+    }
+
+    public int getStudentsNum() {
+        return students.length;
+    }
+
+    public String toString() {
+        String result = "";
+        for (int i = 0; i < students.length; i++) {
+            result += students[i] + " ";
+        }
+        return result;
+    }
+
+    public void changeName(Student student) {
+        student.setSurname("!!!TEST!!!!!");
+
+    }
+
+    public void changeMark(int mark) {
+        if (mark == 5) {
+            return;
         } else {
-            Student[] newStudents =
-                    new Student[students.length * 2];
-            for (int i = 0; i < students.length; i++) {
-                newStudents[i] = students[i];
-            }
-            newStudents[numOfStudents] = student;
-            numOfStudents++;
-            students = newStudents;
+            mark++;
         }
     }
 
-    public void addStudent(String surname) {
-        Student student = new Student(numOfStudents,surname);
-        addStudent(student);
-    }
 
-    public void print() {
-        for(int i = 0; i<numOfStudents;i++){
-            System.out.print(students[i].getId()
-                    + " " + students[i].getSurname()+"\n");
-        }
-    }
 }
