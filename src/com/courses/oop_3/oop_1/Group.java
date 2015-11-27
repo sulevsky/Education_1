@@ -10,6 +10,7 @@ public class Group {
             newArray[i] = students[i];
         }
         newArray[students.length] = student;
+        students = newArray;
     }
 
     public int getStudentsNum() {
@@ -24,18 +25,6 @@ public class Group {
         return result;
     }
 
-    public void changeName(Student student) {
-        student.setSurname("!!!TEST!!!!!");
-
-    }
-
-    public void changeMark(int mark) {
-        if (mark == 5) {
-            return;
-        } else {
-            mark++;
-        }
-    }
 
 
 }
