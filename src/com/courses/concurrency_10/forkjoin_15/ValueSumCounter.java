@@ -17,6 +17,8 @@ public class ValueSumCounter extends RecursiveTask<Long> {
     @Override
     protected Long compute() {
         long sum = node.getValue();
+        ArrayList<String> list = new ArrayList<>();
+
         List<ValueSumCounter> subTasks = new ArrayList<>();
         for (Node child : node.getChildren()) {
             ValueSumCounter task = new ValueSumCounter(child);
