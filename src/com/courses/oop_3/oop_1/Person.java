@@ -1,18 +1,20 @@
 package com.courses.oop_3.oop_1;
 
-public class Teacher {
+/**
+ * Created by Vovka on 20.11.2015.
+ */
+public class Person {
     private int id;
     private String surname;
-    private double salary;
 
-    public Teacher(int id, String surname, double salary) {
+
+
+    public Person(int id, String surname) {
         this.id = id;
         this.surname = surname;
-        this.salary = salary;
     }
 
     public int getId() {
-
         return id;
     }
 
@@ -20,19 +22,11 @@ public class Teacher {
         this.id = id;
     }
 
-    public String getSurname() {
+    protected String getSurname() {
         return surname;
     }
 
     public void setSurname(String surname) {
         this.surname = surname;
-    }
-
-    public double getSalary() {
-        return salary;
-    }
-
-    public void setSalary(double salary) {
-        this.salary = salary;
     }
 }

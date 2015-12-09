@@ -1,71 +1,41 @@
 package com.courses;
 
+import java.util.function.BiFunction;
+import java.util.function.IntBinaryOperator;
+import java.util.function.IntUnaryOperator;
+import java.util.stream.Collectors;
+import java.util.stream.IntStream;
+
+/**
+ * Created by max on 15.11.2015.
+ */
 public class Main {
-
-//    Object lock = new Object();
-
     public static void main(String[] args) {
-        Object lock = new Object();
-        final TestObject firstObject = new TestObject("first",lock);
-        final TestObject secondObject = new TestObject("second",lock);
-
-
-        Runnable runnableA = new Runnable() {
-            @Override
-            public void run() {
-                firstObject.synchronizedPrint();
-            }
-        };
-        Thread threadFirst = new Thread(runnableA);
-        threadFirst.start();
-        Runnable runnableB = new Runnable() {
-            @Override
-            public void run() {
-                secondObject.synchronizedPrint();
-            }
-        };
-        Thread threadSecond = new Thread(runnableB);
-        threadSecond.start();
-
-
+        int totalLines = 9;
+        String result = generateStarsIn(totalLines);
+        System.out.println(result);
     }
 
-    public static class TestObject {
-        private String name;
-        private Object lock;
+    private static String generateStarsIn(int lines) {
+        IntUnaryOperator lineNumberToStars = mapLineNumberToStarsCountFunction(lines, Main::amountInLine);
 
-        public TestObject(String name, Object lock) {
-            this.name = name;
-            this.lock = lock;
-        }
+        return IntStream.rangeClosed(1, lines)
+                .map(lineNumberToStars)
+                .mapToObj(Main::generateStars)
+                .collect(Collectors.joining("\n"));
+    }
 
-        public String getName() {
-            return name;
-        }
+    public static IntUnaryOperator mapLineNumberToStarsCountFunction(int total, IntBinaryOperator bf) {
+        return i -> bf.applyAsInt(i, total);
+    }
 
-        public void setName(String name) {
-            this.name = name;
-        }
+    public static int amountInLine(int lineNumber, int totalLinesCount) {
+        return lineNumber <= Math.ceil(totalLinesCount / 2.0) ? lineNumber : totalLinesCount - lineNumber + 1;
+    }
 
-        public Object getLock() {
-            return lock;
-        }
-
-        public void setLock(Object lock) {
-            this.lock = lock;
-        }
-
-        public void synchronizedPrint(){
-            synchronized (lock) {
-                System.out.println("entering name: " + name);
-                try {
-                    Thread.sleep(2000);
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
-                System.out.println("exiting name: " + name);
-            }
-        }
-
+    public static String generateStars(int count) {
+        return IntStream.range(0, count)
+                .mapToObj(operand -> "*")
+                .collect(Collectors.joining());
     }
 }

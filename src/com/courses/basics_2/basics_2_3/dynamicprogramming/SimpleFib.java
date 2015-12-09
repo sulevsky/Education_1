@@ -1,33 +1,43 @@
 package com.courses.basics_2.basics_2_3.dynamicprogramming;
 
-import java.time.Duration;
-import java.time.Instant;
-
 /**
  * Created by VSulevskiy on 28.06.2015.
  */
 public class SimpleFib {
+    public static boolean f() {
+        System.out.println("In f");
+        return false;
+    }
+
+    public static boolean s() {
+        System.out.println("In s");
+        return true;
+    }
+
     public static void main(String[] args) {
-        for (int i = 1; i <= 10; i++) {
-            System.out.println(i + " :\t " + getFibNumber(i));
+        if ( s() | f()) {
+            System.out.println("In clause");
         }
-
-        int loadTestNumber = 46; //45 - 10 sec, 46 - 15 sec
-
-        //first test
-        Instant start1 = Instant.now();
-        System.out.println(loadTestNumber + " :\t " + getFibNumber(loadTestNumber));
-        Instant end1 = Instant.now();
-        Duration duration1 = Duration.between(start1,end1);
-        System.out.println("Calculation of " + loadTestNumber + " took " + duration1.toString());
-
-        //second test
-        long[] cache = new long[loadTestNumber];
-        long start = System.currentTimeMillis();
-        System.out.println(loadTestNumber + " :\t " + getFibNumberDynamic(loadTestNumber, cache));
-        long duration = System.currentTimeMillis() - start;
-        System.out.println("Calculation of " + loadTestNumber + " took " + (double) duration / 1000 + " seconds");
-
+//        for (int i = 1; i <= 10; i++) {
+//            System.out.println(i + " :\t " + getFibNumber(i));
+//        }
+//
+//        int loadTestNumber = 46; //45 - 10 sec, 46 - 15 sec
+//
+//        //first test
+//        Instant start1 = Instant.now();
+//        System.out.println(loadTestNumber + " :\t " + getFibNumber(loadTestNumber));
+//        Instant end1 = Instant.now();
+//        Duration duration1 = Duration.between(start1,end1);
+//        System.out.println("Calculation of " + loadTestNumber + " took " + duration1.toString());
+//
+//        //second test
+//        long[] cache = new long[loadTestNumber];
+//        long start = System.currentTimeMillis();
+//        System.out.println(loadTestNumber + " :\t " + getFibNumberDynamic(loadTestNumber, cache));
+//        long duration = System.currentTimeMillis() - start;
+//        System.out.println("Calculation of " + loadTestNumber + " took " + (double) duration / 1000 + " seconds");
+//
 
     }
 
@@ -53,3 +63,5 @@ public class SimpleFib {
         return result;
     }
 }
+
+

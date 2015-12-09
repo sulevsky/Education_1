@@ -71,24 +71,24 @@ public class HashTable {
                 '}';
     }
 
-    public static void main(String[] args) {
-        Student ivanov =
-                new Student(2, "Ivanov", new int[]{5,5,4});
-        HashTable table = new HashTable();
-        table.put(ivanov, 100);
-
-        System.out.println(table);
-        ivanov.getMarks()[0]=2;
-//        Object gotFromTable = table.get(ivanov);
-        table.put(ivanov, 100);
-        System.out.println(table);
-
-
-
-
-
-    }
-
+//    public static void main(String[] args) {
+//        Student ivanov =
+//                new Student(2, "Ivanov", new int[]{5,5,4});
+//        HashTable table = new HashTable();
+//        table.put(ivanov, 100);
+//
+//        System.out.println(table);
+//        ivanov.getMarks()[0]=2;
+////        Object gotFromTable = table.get(ivanov);
+//        table.put(ivanov, 100);
+//        System.out.println(table);
+//
+//
+//
+//
+//
+//    }
+//
 
 
 
