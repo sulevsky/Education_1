@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<customer>
+    <customerId>2</customerId>
+    <firstName>Petrov</firstName>
+    <lastName>Peter</lastName>
+    <accounts>
+        <account>3</account>
+    </accounts>
+</customer>
