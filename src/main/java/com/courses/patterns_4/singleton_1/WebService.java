@@ -1,8 +1,5 @@
 package com.courses.patterns_4.singleton_1;
 
-/**
- * Created by VSulevskiy on 17.07.2015.
- */
 public class WebService {
 //eager
     private static WebService service;

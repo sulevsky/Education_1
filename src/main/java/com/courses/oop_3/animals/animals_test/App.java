@@ -1,8 +1,5 @@
 package com.courses.oop_3.animals.animals_test;
 
-/**
- * Created by Vovka on 24.11.2015.
- */
 public class App {
     public static void main(String[] args) {
         Animal murka = new Cat(1,3,2.4,"Grey","Murka",true);

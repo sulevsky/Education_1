@@ -1,8 +1,5 @@
 package com.courses.oop_3.animals.animals_test;
 
-/**
- * Created by Vovka on 24.11.2015.
- */
 public class Wild {
     private boolean isPredator;
 
