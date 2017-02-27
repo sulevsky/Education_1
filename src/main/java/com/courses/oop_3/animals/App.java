@@ -1,9 +1,6 @@
 package com.courses.oop_3.animals;
 
 
-/**
- * Created by VSulevskiy on 09.07.2015.
- */
 public class App {
     public static Giraffe giraffe;
     public static Zoo init() {

@@ -1,8 +1,5 @@
-package com.courses.basics_2.basics_2_3;
+package com.courses.basics_2.basics_2_3.dynamicprogramming;
 
-/**
- * Created by Vovka on 09.11.2015.
- */
 public class FibCalculator {
     public static void main(String[] args) {
         System.out.println(calculateFib(50));

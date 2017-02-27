@@ -2,9 +2,6 @@ package com.courses.basics_2.basics_2_3;
 
 import java.util.Arrays;
 
-/**
- * Created by Vladimir Sulevskiy on 07.07.2015.
- */
 public class TestArrayChange {
     public static void main(String[] args) {
         int v = 10;

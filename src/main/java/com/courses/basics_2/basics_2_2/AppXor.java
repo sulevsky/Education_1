@@ -2,9 +2,6 @@ package com.courses.basics_2.basics_2_2;
 
 import java.util.ArrayList;
 
-/**
- * Created by VSulevskiy on 25.06.2015.
- */
 public class AppXor {
 
     public static void main(String[] args) {
