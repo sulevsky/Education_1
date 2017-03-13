@@ -17,6 +17,8 @@ public class Game {
         @Override
         public void run() {
             GameLogic gameLogic = new GameLogic();
+            AiGameStrategy gameStrategy = getAiGameStrategy();
+            gameLogic.setAiGameStrategy(gameStrategy);
 
             JFrame frame = new JFrame("Tic tac toe");
             frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
@@ -25,7 +27,7 @@ public class Game {
             JButton[] buttons = new JButton[9];
             for (int i = 0; i < 9; i++) {
                 JButton button = new JButton();
-                buttons[i]=button;
+                buttons[i] = button;
                 button.setPreferredSize(new Dimension(100, 100));
                 button.setBackground(Color.DARK_GRAY);
                 ActionListener listener = new ButtonActionListener(buttons, i, gameLogic);
@@ -36,6 +38,12 @@ public class Game {
             frame.setVisible(true);
 
         }
+    }
+
+    private static AiGameStrategy getAiGameStrategy() {
+        //this is the only place which knows implementation of game strategy
+        // all other places are interfaces
+        return new RandomAiGameStrategy();
     }
 
     private static class ButtonActionListener implements ActionListener {
@@ -57,11 +65,12 @@ public class Game {
                 buttons[buttonNum].setForeground(Color.RED);
                 buttons[buttonNum].setFont(new Font("SansSerif", Font.BOLD, 50));
                 buttons[buttonNum].setText("X");
-            }else{
+            }
+            else {
                 return;
             }
             boolean playerWin = gameLogic.checkPlayerWin();
-            if(playerWin){
+            if (playerWin) {
                 JOptionPane.showMessageDialog(null, "You win");
                 System.exit(0);
             }
@@ -69,10 +78,11 @@ public class Game {
             int aiPos = gameLogic.aIMakeTurn();
             boolean aiWin = gameLogic.checkAiWin();
             buttons[aiPos].setForeground(Color.WHITE);
+            buttons[aiPos].setForeground(Color.GREEN);
             buttons[aiPos].setFont(new Font("SansSerif", Font.BOLD, 50));
             buttons[aiPos].setText("O");
 
-            if(aiWin){
+            if (aiWin) {
                 JOptionPane.showMessageDialog(null, "AI win");
                 System.exit(0);
             }
