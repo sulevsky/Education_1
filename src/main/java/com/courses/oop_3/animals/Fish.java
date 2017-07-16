@@ -8,7 +8,7 @@ import java.util.List;
 /**
  * Created by VSulevskiy on 09.07.2015.
  */
-public class Fish extends Domestic implements Observable
+public class Fish extends Domestic
 {
     List<Observer> observers = new ArrayList<Observer>();
     public Fish(int id, int age, double weight, String color, String name, boolean isVaccinated) {
@@ -22,15 +22,8 @@ public class Fish extends Domestic implements Observable
         return "....";
     }
 
-    @Override
     public void addObserver(Observer observer) {
         observers.add(observer);
     }
 
-    @Override
-    public void notifyObservers() {
-        for (Observer o : observers) {
-            o.handle();
-        }
-    }
 }

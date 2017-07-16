@@ -1,10 +1,29 @@
 package com.courses.oop_3.animals;
 
-public abstract class Animal {
+import com.courses.oop_3.animals.observable.Observable;
+
+public  class Animal  {
     public int id;
+
     private int age;
+
     private double weight;
+
     private String color;
+
+    public boolean isSick() {
+        return isSick;
+    }
+
+
+    public void sick() {
+        isSick = true;
+    }
+    public void healed() {
+        isSick = false;
+    }
+
+    private boolean isSick;
 
     public Animal(int id, int age, double weight, String color) {
         this.id = id;
@@ -15,15 +34,16 @@ public abstract class Animal {
 
     public Animal() {
     }
-    public void say(){
+
+    public void say() {
         System.out.println(phrase());
     }
 
-    public String phrase(){
+    public String phrase() {
         return "Hello ";
     }
 
-//    public abstract void move();
+    //    public abstract void move();
 
     public int getAge() {
         return age;
@@ -60,16 +80,16 @@ public abstract class Animal {
     @Override
     public String toString() {
         return "Animal{" +
-                "age=" + age +
-                ", id=" + id +
-                '}';
+               "age=" + age +
+               ", id=" + id +
+               '}';
     }
 
-//    @Override
-//    public int compareTo(Object o) {
-//        Animal thatObject = (Animal)o;
-//        if(this.age<thatObject.age) return -1;
-//        else if(this.age>thatObject.age) return 1;
-//        else return 0;
-//    }
+    //    @Override
+    //    public int compareTo(Object o) {
+    //        Animal thatObject = (Animal)o;
+    //        if(this.age<thatObject.age) return -1;
+    //        else if(this.age>thatObject.age) return 1;
+    //        else return 0;
+    //    }
 }
